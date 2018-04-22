@@ -1,16 +1,25 @@
 <template>
-	<swiper :options="swiperOption">
-		<swiper-slide v-for="(page, index) in pages" :key="index">
-			<div class="icons">
-				<div class="icon" v-for="item in page" :key="item.id">
-					<div class="icon-img">
-						<img :src="item.iconUrl" alt="">
+	<div>
+
+
+		<swiper :options="swiperOption">
+			<swiper-slide v-for="(page, index) in pages" :key="index">
+				<div class="icons">
+					<div class="icon" v-for="item in page" :key="item.id">
+						<div class="icon-img">
+							<img :src="item.iconUrl" alt="">
+						</div>
+						<p>{{item.desc}}</p>
 					</div>
-					<p>{{item.desc}}</p>
 				</div>
-			</div>
-		</swiper-slide>
-	</swiper>
+			</swiper-slide>
+			<div class="swiper-pagination" slot="pagination"></div>
+		</swiper>
+		<div class="location">
+			<div class="left"><span class="iconfont icon-aui-icon-location"></span> 定位失败</div>
+			<div class="right"><span class="iconfont icon-internet"></span> 五折泡温泉</div>
+		</div>
+	</div>
 </template>
 <script>
 	export default {
@@ -65,16 +74,18 @@
 					},
 
 				],
-				swiperOption: {}
+				swiperOption: {
+					pagination: ".swiper-pagination"
+				}
 			}
 		},
 		computed: {
-			pages () {
+			pages() {
 				const pages = [];
 				this.iconList.forEach((item, index) => {
 					const page = Math.floor(index / 8);
-					if (!pages[page]){
-						pages[page]=[];
+					if (!pages[page]) {
+						pages[page] = [];
 					}
 					pages[page].push(item);
 				});
@@ -87,6 +98,10 @@
 <style lang="stylus" scoped>
 	@import "~styles/varibles.styl"
 	@import "~styles/mixins.styl"
+	>>> .swiper-pagination-bullets
+		bottom 0
+	>>> .swiper-pagination-bullet-active
+		background red
 
 	.icons
 		height: 0
@@ -121,5 +136,23 @@
 				color $darkColor
 				text-align center
 				ellipsis()
+
+	.location
+		width 100%
+		height .88rem
+		margin-top: .30rem
+		div
+			float left
+			width 50%
+			line-height .88rem
+			text-align center
+			border-top 1px solid #ccc
+			box-sizing border-box
+			border-right 1px solid #ccc
+			span
+				font-size .32rem
+		div.right
+			border-right none
+
 
 </style>
