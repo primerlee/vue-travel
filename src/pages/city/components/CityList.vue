@@ -12,57 +12,15 @@
 			<div class="section">
 				<div class="title">热门城市</div>
 				<div class="city-list border-topbottom">
-					<div class="city-wrap">
-						<div class="city">北京</div>
-					</div>
-					<div class="city-wrap">
-						<div class="city">北京</div>
-					</div>
-					<div class="city-wrap">
-						<div class="city">北京</div>
-					</div>
-					<div class="city-wrap">
-						<div class="city">北京</div>
-					</div>
-					<div class="city-wrap">
-						<div class="city">北京</div>
-					</div>
-					<div class="city-wrap">
-						<div class="city">北京</div>
+					<div class="city-wrap" v-for="item in city" :key="item.id">
+						<div class="city">{{item.name}}</div>
 					</div>
 				</div>
 			</div>
-			<div class="section">
-				<div class="title">A</div>
+			<div class="section" v-for="(item, key) in cities" :key="key">
+				<div class="title">{{key}}</div>
 				<ul class="border-topbottom">
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-				</ul>
-			</div>
-			<div class="section">
-				<div class="title">A</div>
-				<ul class="border-topbottom">
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-				</ul>
-			</div>
-			<div class="section">
-				<div class="title">A</div>
-				<ul class="border-topbottom">
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
-					<li class="border-bottom">杭州</li>
+					<li class="border-bottom" v-for="innnerItem in item" :key="innnerItem.id">{{innnerItem.name}}</li>
 				</ul>
 			</div>
 		</div>
@@ -74,6 +32,10 @@
 
 	export default {
 		name: "CityList",
+		props: {
+			city: Array,
+			cities: Object
+		},
 		mounted: function () {
 			 new BScroll(this.$refs.wrapper)
 		}
