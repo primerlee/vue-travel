@@ -1,6 +1,6 @@
 <template>
-	<swiper :options="swiperOption">
-		<swiper-slide v-for="item in bannerList" :key="item.id">
+	<swiper :options="swiperOption" v-if="showBanner">
+		<swiper-slide v-for="item in list" :key="item.id">
 			<img class="banner-img" :src="item.imgUrl" alt="">
 		</swiper-slide>
 		<div class="swiper-pagination" slot="pagination"></div>
@@ -9,22 +9,21 @@
 <script>
 	export default {
 		name: "HomeBanner",
+		props: {
+			list: Array
+		},
 		data: function () {
 			return {
 				swiperOption: {
 					pagination: '.swiper-pagination',
-					loop: true
-				},
-				bannerList: [
-					{
-						id: '00001',
-						imgUrl: 'http://img1.qunarzz.com/piao/fusion/1609/69/e232563244dbc302.jpg_640x200_5d31908b.jpg'
-					},
-					{
-						id: '00002',
-						imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/fd/e2ef81eb09dd8a02.jpg_640x200_8d784252.jpg'
-					}
-				]
+					loop: true,
+					autoplay: 3000
+				}
+			}
+		},
+		computed:  {
+			showBanner: function () {
+				return this.list.length
 			}
 		}
 	}

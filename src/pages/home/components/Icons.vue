@@ -1,11 +1,11 @@
 <template>
 	<div>
-		<swiper :options="swiperOption">
+		<swiper :options="swiperOption" v-if="showIcons">
 			<swiper-slide v-for="(page, index) in pages" :key="index">
 				<div class="icons">
 					<div class="icon" v-for="item in page" :key="item.id">
 						<div class="icon-img">
-							<img :src="item.iconUrl" alt="">
+							<img :src="item.imgUrl" alt="">
 						</div>
 						<p>{{item.desc}}</p>
 					</div>
@@ -22,66 +22,21 @@
 <script>
 	export default {
 		name: 'HomeIcons',
-		data: function () {
+		props: {
+			list: Array
+		},
+		data: function(){
 			return {
-				iconList: [
-					{
-						id: "0001",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-						desc: "景点门票"
-					},
-					{
-						id: "0002",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png",
-						desc: "一日游"
-					},
-					{
-						id: "0003",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png",
-						desc: "杭州乐园"
-					},
-					{
-						id: "0004",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-						desc: "千岛湖"
-					},
-					{
-						id: "0005",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-						desc: "西溪湿地"
-					},
-					{
-						id: "0006",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-						desc: "印象西湖"
-					},
-					{
-						id: "0007",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-						desc: "宋城千古情"
-					},
-					{
-						id: "0008",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-						desc: "漂流"
-					},
-					{
-						id: "0009",
-						iconUrl: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-						desc: "湘湖"
-					},
-
-				],
 				swiperOption: {
-					pagination: ".swiper-pagination",
-					autoPlay: false
+					pagination: '.swiper-pagination',
+					autoplay: false
 				}
 			}
 		},
 		computed: {
 			pages() {
 				const pages = [];
-				this.iconList.forEach((item, index) => {
+				this.list.forEach((item, index) => {
 					const page = Math.floor(index / 8);
 					if (!pages[page]) {
 						pages[page] = [];
@@ -89,6 +44,9 @@
 					pages[page].push(item);
 				});
 				return pages
+			},
+			showIcons () {
+				return this.list.length;
 			}
 		}
 	}

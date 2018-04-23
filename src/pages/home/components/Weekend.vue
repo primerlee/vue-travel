@@ -3,11 +3,11 @@
 		<div class="recommend-title">
 			周末去哪
 		</div>
-		<div class="content border-bottom" v-for="item in recommendList" :key="item.id">
+		<div class="content border-bottom" v-for="item in list" :key="item.id">
 			<img :src="item.imgUrl">
 			<div class="text">
-				<p class="content-title">{{item.contentTitle}}</p>
-				<p class="content-desc">{{item.contentDesc}}</p>
+				<p class="content-title">{{item.title}}</p>
+				<p class="content-desc">{{item.desc}}</p>
 			</div>
 		</div>
 	</div>
@@ -15,29 +15,8 @@
 <script>
 	export default {
 		name: "HomeWeekend",
-		data: function () {
-			return {
-				recommendList: [
-					{
-						id: "00001",
-						imgUrl: "http://img1.qunarzz.com/sight/source/1505/4e/3e87ee62e59cdb.jpg_r_640x214_fe6cc902.jpg",
-						contentTitle: "西湖十景",
-						contentDesc: "浪漫西溪，邂逅美丽",
-					},
-					{
-						id: "00002",
-						imgUrl: "http://img1.qunarzz.com/sight/source/1505/9f/7d45cc38259e0.jpg_r_640x214_156f4299.jpg",
-						contentTitle: "宋城千古情",
-						contentDesc: "浪漫西溪，邂逅美丽",
-					},
-					{
-						id: "00003",
-						imgUrl: "http://img1.qunarzz.com/sight/source/1505/bc/83feb2e003d0dd.jpg_r_640x214_0b7269b8.jpg",
-						contentTitle: "杭州多样乐园",
-						contentDesc: "浪漫西溪，邂逅美丽",
-					}
-				]
-			}
+		props: {
+			list: Array
 		}
 	}
 </script>
