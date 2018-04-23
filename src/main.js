@@ -10,7 +10,7 @@ import 'styles/iconfont.css'
 
 Vue.config.productionTip = false;
 fastClick.attach(document.body);
-Vue.use(VueAwesomeSwiper)
+Vue.use(VueAwesomeSwiper);
 
 new Vue({
 	el: '#app',

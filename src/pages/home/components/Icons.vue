@@ -1,7 +1,5 @@
 <template>
 	<div>
-
-
 		<swiper :options="swiperOption">
 			<swiper-slide v-for="(page, index) in pages" :key="index">
 				<div class="icons">
@@ -75,7 +73,8 @@
 
 				],
 				swiperOption: {
-					pagination: ".swiper-pagination"
+					pagination: ".swiper-pagination",
+					autoPlay: false
 				}
 			}
 		},
@@ -100,12 +99,12 @@
 	@import "~styles/mixins.styl"
 	>>> .swiper-pagination-bullets
 		bottom 0
+
 	>>> .swiper-pagination-bullet-active
 		background red
-
 	.icons
 		height: 0
-		padding-bottom 50%
+		padding-bottom 55%
 		overflow hidden
 		.icon
 			overflow hidden
@@ -140,9 +139,9 @@
 	.location
 		width 100%
 		height .88rem
-		margin-top: .30rem
+		margin-top: .20rem
+		display flex
 		div
-			float left
 			width 50%
 			line-height .88rem
 			text-align center
@@ -153,6 +152,4 @@
 				font-size .32rem
 		div.right
 			border-right none
-
-
 </style>

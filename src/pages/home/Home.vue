@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<home-header></home-header>
 		<home-banner></home-banner>
 		<home-icons></home-icons>
@@ -18,6 +18,7 @@
 	import HomeWeekend from './components/Weekend'
 	import HomeNotice from './components/Notice'
 	import HomeFooter from './components/Footer'
+
 	export default {
 		name: "Home",
 		components: {
@@ -32,6 +33,6 @@
 	}
 </script>
 
-<style>
+<style lang="stylus" scoped>
 
 </style>

@@ -58,7 +58,7 @@
 				font-size .32rem
 				height .40rem
 				line-height .40rem
-				margin-top: .1rem
+				margin-top: .2rem
 				color $darkColor
 			.content-desc
 				font-size .26rem

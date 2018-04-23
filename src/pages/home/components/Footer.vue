@@ -37,16 +37,21 @@
 			li
 				float: left
 				width 25%
-				color #bbb
-				font-size .32rem
+				color #9e9e9e
+
+		ul.ticket
+			font-size .24rem
+			span
+				font-size .40rem
+				vertical-align middle
+				margin-right .1rem
 		ul.about
-			width 70%
-			font-size .34rem
+			width 80%
 		.version
 			display flex
 			height .8rem
 			line-height .8rem
-			border-top 1px solid #aaa
+			border-top 1px solid #ddd
 			padding 0 1rem;
 			div
 				text-align center
@@ -56,6 +61,7 @@
 				color #25a4bb
 		.copy-right
 			text-align center
-			height .48rem
-			line-height .48rem
+			height .6rem
+			line-height .6rem
+			padding-bottom .2rem
 </style>

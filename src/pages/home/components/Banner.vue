@@ -1,10 +1,8 @@
 <template>
 	<swiper :options="swiperOption">
-		<!-- slides -->
 		<swiper-slide v-for="item in bannerList" :key="item.id">
 			<img class="banner-img" :src="item.imgUrl" alt="">
 		</swiper-slide>
-		<!-- Optional controls -->
 		<div class="swiper-pagination" slot="pagination"></div>
 	</swiper>
 </template>
@@ -34,7 +32,6 @@
 <style lang="stylus" scoped>
 	>>> .swiper-pagination-bullet-active
 		background #fff
-
 	.banner-img
 		width 100%
 </style>
