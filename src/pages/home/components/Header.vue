@@ -1,8 +1,12 @@
 <template>
 	<div class="header">
-		<div class="header-left"><div class="iconfont icon-fanhui back-icon"></div></div>
+		<div class="header-left">
+			<div class="iconfont icon-fanhui back-icon"></div>
+		</div>
 		<div class="header-input"><span class="iconfont icon-sousuo"></span>输入城市景点游玩主题</div>
-		<div class="header-right">{{this.city}}<span class="iconfont icon-arrowdown arrow-down"></span></div>
+		<router-link to="/city">
+			<div class="header-right">{{this.city}}<span class="iconfont icon-arrowdown arrow-down"></span></div>
+		</router-link>
 	</div>
 </template>
 
@@ -19,8 +23,8 @@
 	@import "~styles/varibles.styl"
 	.header
 		display flex
-		height .86rem
-		line-height .86rem
+		height $headerHeight
+		line-height $headerHeight
 		background $bgColor
 		color #fff
 		.header-left
@@ -43,6 +47,7 @@
 			width 1.24rem
 			float right
 			text-align center
+			color #fff
 			.arrow-down
 				font-size .24rem
 </style>
