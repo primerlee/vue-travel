@@ -1,62 +1,83 @@
 <template>
-    <div class="list">
-		<div class="section">
-			<div class="title">当前城市</div>
-			<div class="city-list border-topbottom">
-				<div class="city-wrap"><div class="city">北京</div></div>
+	<div class="list" ref="wrapper">
+		<div>
+			<div class="section">
+				<div class="title">当前城市</div>
+				<div class="city-list border-topbottom">
+					<div class="city-wrap">
+						<div class="city">北京</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="section">
-			<div class="title">热门城市</div>
-			<div class="city-list border-topbottom">
-				<div class="city-wrap"><div class="city">北京</div></div>
-				<div class="city-wrap"><div class="city">北京</div></div>
-				<div class="city-wrap"><div class="city">北京</div></div>
-				<div class="city-wrap"><div class="city">北京</div></div>
-				<div class="city-wrap"><div class="city">北京</div></div>
-				<div class="city-wrap"><div class="city">北京</div></div>
+			<div class="section">
+				<div class="title">热门城市</div>
+				<div class="city-list border-topbottom">
+					<div class="city-wrap">
+						<div class="city">北京</div>
+					</div>
+					<div class="city-wrap">
+						<div class="city">北京</div>
+					</div>
+					<div class="city-wrap">
+						<div class="city">北京</div>
+					</div>
+					<div class="city-wrap">
+						<div class="city">北京</div>
+					</div>
+					<div class="city-wrap">
+						<div class="city">北京</div>
+					</div>
+					<div class="city-wrap">
+						<div class="city">北京</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="section">
-			<div class="title">A</div>
-			<ul class="border-topbottom">
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-			</ul>
-		</div>
-		<div class="section">
-			<div class="title">A</div>
-			<ul class="border-topbottom">
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-			</ul>
-		</div>
-		<div class="section">
-			<div class="title">A</div>
-			<ul class="border-topbottom">
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-				<li class="border-bottom">杭州</li>
-			</ul>
+			<div class="section">
+				<div class="title">A</div>
+				<ul class="border-topbottom">
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+				</ul>
+			</div>
+			<div class="section">
+				<div class="title">A</div>
+				<ul class="border-topbottom">
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+				</ul>
+			</div>
+			<div class="section">
+				<div class="title">A</div>
+				<ul class="border-topbottom">
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+					<li class="border-bottom">杭州</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-    export default {
-        name: "CityList"
-    }
+	import BScroll from 'better-scroll'
+
+	export default {
+		name: "CityList",
+		mounted: function () {
+			 new BScroll(this.$refs.wrapper)
+		}
+	}
 </script>
 
 <style scoped lang="stylus">
@@ -65,9 +86,11 @@
 			border-color #ccc
 		&:after
 			border-color #ccc
+
 	.border-bottom
 		&:before
 			border-color #ccc
+
 	.list
 		position absolute
 		left 0
