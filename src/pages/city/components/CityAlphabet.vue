@@ -51,7 +51,7 @@
 						if(index >= 0 && index < this.letters.length ){
 							this.$emit("clicked", this.letters[index]);
 						}
-					}, 18);
+					}, 10);
 
 				}
 			},
