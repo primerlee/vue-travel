@@ -2,8 +2,8 @@
 	<div>
 		<city-header></city-header>
 		<city-search></city-search>
-		<city-list :city="hotCity" :cities="cities"></city-list>
-		<city-alphabet :cities="cities"></city-alphabet>
+		<city-list :city="hotCity" :cities="cities" :letter="letter"></city-list>
+		<city-alphabet :cities="cities" @clicked="receiveLetter"></city-alphabet>
 	</div>
 </template>
 
@@ -25,7 +25,8 @@
 		data: function(){
         	return{
         		hotCity: [],
-				cities: {}
+				cities: {},
+				letter: ""
 			}
 		},
 		methods: {
@@ -38,6 +39,9 @@
 					this.hotCity = res.data.hotCities;
 					this.cities = res.data.cities;
 				}
+			},
+			receiveLetter: function (res) {
+				this.letter = res;
 			}
 		},
 		mounted: function () {
