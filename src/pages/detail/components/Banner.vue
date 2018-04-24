@@ -6,9 +6,6 @@
 			<div class="title">西溪国家湿地公园(AAAAA景区)</div>
 			<div class="number"><span class="iconfont icon-like"> 9</span></div>
 		</div>
-		<div class="back-icon">
-			<router-link to="/"><span class="iconfont icon-fanhui"></span></router-link>
-		</div>
 	</div>
 		<common-gallery :images="images" v-show="showGallery" @close="handleGalleryClose"></common-gallery>
 	</div>
@@ -66,15 +63,4 @@
 				background rgba(0,0,0,9)
 				border-radius .2rem
 				margin-right .2rem
-		.back-icon
-			width .6rem
-			height .6rem
-			border-radius 50%
-			color #fff
-			background rgba(0,0,0,9)
-			position absolute
-			left .2rem
-			top .2rem
-			line-height .6rem
-			text-align center
 </style>
