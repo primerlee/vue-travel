@@ -3,17 +3,20 @@
 		<div class="recommend-title">
 			<span class="iconfont icon-like like-icon"></span>猜你喜欢
 		</div>
-		<div class="content border-bottom" v-for="item in list" :key="item.id">
-			<div class="img-wrap">
-				<img :src="item.imgUrl">
-			</div>
-			<div class="text">
-				<p class="content-title">{{item.title}}</p>
-				<p class="content-desc"><span>★★★★★</span>{{item.count}}条评论</p>
-				<p class="price">¥ {{item.price}}<span>起</span><span class="address">{{item.address}}</span></p>
-				<p class="add-info" v-show="item.desc">{{item.desc}}</p>
-			</div>
-		</div>
+		<ul>
+			<router-link class="content border-bottom" tag="li" v-for="item in list" :key="item.id"
+						 :to="'/detail/'+item.id">
+				<div class="img-wrap">
+					<img :src="item.imgUrl">
+				</div>
+				<div class="text">
+					<p class="content-title">{{item.title}}</p>
+					<p class="content-desc"><span>★★★★★</span>{{item.count}}条评论</p>
+					<p class="price">¥ {{item.price}}<span>起</span><span class="address">{{item.address}}</span></p>
+					<p class="add-info" v-show="item.desc">{{item.desc}}</p>
+				</div>
+			</router-link>
+		</ul>
 		<div class="more">查看所有产品</div>
 	</div>
 </template>
@@ -24,9 +27,7 @@
 			list: Array
 		},
 		data: function () {
-			return {
-
-			}
+			return {}
 		}
 	}
 </script>
