@@ -69,6 +69,7 @@
 			line-height .6rem
 			text-align center
 		.back-fixed
+			z-index 2
 			position fixed
 			top 0
 			left 0
