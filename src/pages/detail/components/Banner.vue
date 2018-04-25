@@ -1,26 +1,35 @@
 <template>
 	<div>
     <div class="banner" @click="handleBannerClick">
-		<img class="banner-img" src="//img1.qunarzz.com/wugc/p3/201206/02/44c1fe10b91aed6793835fbb.jpg_600x330_2ae2ceaa.jpg" alt="">
+		<img class="banner-img" :src="bannerImg" alt="">
 		<div class="banner-info">
-			<div class="title">西溪国家湿地公园(AAAAA景区)</div>
-			<div class="number"><span class="iconfont icon-like"> 9</span></div>
+			<div class="title">{{sightName}}</div>
+			<div class="number"><span class="iconfont icon-like">{{galleryImgs.length}}</span></div>
 		</div>
 	</div>
-		<common-gallery :images="images" v-show="showGallery" @close="handleGalleryClose"></common-gallery>
+		<fade-animation>
+			<common-gallery :images="galleryImgs" v-show="showGallery" @close="handleGalleryClose"></common-gallery>
+		</fade-animation>
 	</div>
 </template>
 
 <script>
-	import CommonGallery from 'common/Gallery'
+	import CommonGallery from 'common/gallery/Gallery'
+	import fadeAnimation from 'common/fade/fadeAnimation'
     export default {
         name: "DetailBanner",
 		components: {
-        	CommonGallery
+        	CommonGallery,
+			fadeAnimation
+		},
+		props: {
+			sightName: String,
+			bannerImg: String,
+			galleryImgs: Array,
+			list: Array
 		},
 		data: function () {
 			return {
-				images: ["http://img1.qunarzz.com/sight/p0/1611/be/be9fc1bcf93da153a3.img.jpg_r_800x800_52953aa5.jpg","http://img1.qunarzz.com/sight/p0/1511/fe/fe1e93a7d9b5d7ac90.img.jpg_r_800x800_8a546471.jpg"],
 				showGallery: false
 			}
 		},

@@ -17,7 +17,7 @@
 	import HomeRecommend from './components/Recommend'
 	import HomeWeekend from './components/Weekend'
 	import HomeNotice from './components/Notice'
-	import HomeFooter from './components/Footer'
+	import HomeFooter from 'common/footer/Footer'
 	import axios from 'axios'
 	import { mapState} from 'vuex'
 

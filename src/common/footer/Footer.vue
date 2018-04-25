@@ -1,10 +1,10 @@
 <template>
 	<div class="footer">
 		<ul class="ticket">
-			<li><span class="iconfont icon-feiji800"></span>机票</li>
-			<li><span class="iconfont icon-icon-"></span>酒店</li>
-			<li><span class="iconfont icon-kezhangongyu"></span>公寓</li>
-			<li><span class="iconfont icon-arrowdown"></span>更多</li>
+			<li><span class="iconfont icon-feiji800"></span><i>机票</i></li>
+			<li><span class="iconfont icon-icon-"></span><i>酒店</i></li>
+			<li><span class="iconfont icon-kezhangongyu"></span><i>公寓</i></li>
+			<li><span class="iconfont icon-arrowdown"></span><i>更多</i></li>
 		</ul>
 		<ul class="about">
 			<li><a href="#">登录</a></li>
@@ -45,6 +45,13 @@
 				font-size .40rem
 				vertical-align middle
 				margin-right .1rem
+				text-decoration none
+
+			i
+				display inline-block
+				line-height: 1.4
+				border-bottom 1px solid #9e9e9e
+
 		ul.about
 			width 80%
 		.version

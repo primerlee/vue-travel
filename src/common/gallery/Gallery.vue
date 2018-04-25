@@ -25,7 +25,7 @@
 			}
 		},
 		props: {
-        	images: {
+			images: {
         		type: Array,
 				default: function () {
 					return  []

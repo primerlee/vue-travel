@@ -4,7 +4,7 @@
 			<router-link to="/"><span class="iconfont icon-fanhui"></span></router-link>
 		</div>
 		<div class="back-fixed" v-show="!backIconShow" :style="opacityStyle">
-			景点详情
+			{{sightName}}
 			<router-link to="/"><div class="iconfont icon-fanhui header-back"></div>
 			</router-link>
 		</div>
@@ -22,8 +22,12 @@
 				}
 			}
 		},
+		props: {
+			sightName: String
+		},
 		methods: {
         	handleScroll: function () {
+        		console.log("scroll");
         		const top = document.documentElement.scrollTop;
         		if (top > 60){
         			let opacity = top / 180;
@@ -40,7 +44,10 @@
 			}
 		},
 		activated: function () {
-			window.addEventListener("scroll", this.handleScroll, false)
+			window.addEventListener("scroll", this.handleScroll, false);
+		},
+		deactivated: function () {
+			window.removeEventListener("scroll", this.handleScroll, false);
 		}
     }
 </script>
